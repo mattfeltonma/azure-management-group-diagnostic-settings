@@ -216,11 +216,10 @@ def set_mg_diagnostic_setting(token, mg_id, diag_name="diag", storage_account_id
                 body=json.dumps(body)
             )
 
-            if response.status_code == 200:
-                return {
-                    "id": mg_id,
-                    "was_compliant": False
-                }
+            return {
+                "id": mg_id,
+                "was_compliant": False
+            }
         else:
             logging.info('Existing diagnostic settings were found')
 
